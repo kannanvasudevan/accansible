@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+   -name: Launching ec2 instance
+    ec2: 
+     key_name: ansible_key
+     instance_type: t2.micro
+     image: ami-085925f297f89fce1
+     region: us-east-1
+     instance_tags:
+      Name: ubuntu-node

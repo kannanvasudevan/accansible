@@ -1,0 +1,29 @@
+---
+- hosts: tag_Name_ansiblerhelnode
+  become: yes
+  vars:
+          ansible_user: ec2-user
+  tasks:
+          - name: include vars
+            include_vars:
+                    file: users.yaml
+          - name: creating user "{{ item }}"
+            user:
+                    name: "{{ item }}"  
+                    state: present
+            loop:
+                    "{{ users }}"
+- hosts: tag_Name_ubuntunodeansible
+  become: yes
+  vars:
+          ansible_user: ubuntu 
+  tasks:
+          - name: include vars
+            include_vars:
+                    file: users.yaml
+          - name: creating user "{{ item }}"
+            user:
+                    name: "{{ item }}"  
+                    state: present
+            loop:
+                    "{{ users }}"

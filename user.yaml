@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+          - name: Including user var
+            include_vars:
+                    file: users.yaml
+          - name: creating user
+            user:
+                    name: "{{ item }}"
+                    state: present
+            with_items:
+                   "{{ users }}"

@@ -1,0 +1,9 @@
+---
+- hosts: tag_Name_ubuntunodeansible
+  tasks: 
+    - name: getting public ip
+      command: curl ifconfig.me
+      register: pub_ip
+    - name: Getting ip
+      debug:
+              msg: My ip address is "{{ ansible_default_ipv4.address }}" and my public ip is "{{ pub_ip.stdout }}"

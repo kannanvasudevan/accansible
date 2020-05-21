@@ -1,0 +1,8 @@
+[master]
+192.168.72.150
+
+[client1]
+192.168.72.151 ansible_user=client1
+
+[rhel]
+192.168.72.147 ansible_user=rhel
